@@ -1,0 +1,122 @@
+.menu-page main.menu-main {
+    background: none;
+    border: none;
+    padding: 0;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.menu-header {
+    width: 100%;
+    padding: 8% 8% 6%;
+    background: linear-gradient(180deg, var(--oak-dark), var(--night) 85%);
+    border-radius: 0 0 28px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.back-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    color: var(--ember);
+}
+
+.back-link .fa-arrow-right {
+    transform: scaleX(-1); /* points toward reading start in RTL */
+}
+
+.menu-header h1 {
+    color: var(--cream);
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    text-shadow: none;
+}
+
+.category {
+    width: 100%;
+    background: linear-gradient(180deg, var(--oak-dark), var(--night-deep));
+    border: 1px solid rgba(224, 134, 47, 0.18);
+    border-radius: 18px;
+    padding: 22px 24px 8px;
+}
+
+.category h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ember);
+}
+
+.category h2 i {
+    font-size: 1.1rem;
+}
+
+.items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(243, 230, 211, 0.08);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cream);
+}
+
+.item-desc {
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+    line-height: 1.6;
+}
+
+.item-price {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ember);
+    white-space: nowrap;
+}
+
+.item-price::after {
+    content: " تومان";
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--cream-dim);
+}
+
+@media (max-width: 420px) {
+    .category { padding: 18px 16px 6px; }
+    .menu-header { padding: 14% 6% 8%; }
+}

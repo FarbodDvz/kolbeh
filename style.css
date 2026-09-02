@@ -1,0 +1,166 @@
+:root {
+    --night: #17130f;
+    --night-deep: #0d0a07;
+    --oak-dark: #3b2415;
+    --oak: #5a3a22;
+    --ember: #e0862f;
+    --ember-deep: #c1440e;
+    --cream: #f3e6d3;
+    --cream-dim: #cbb89e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse 70% 45% at 50% 78%, rgba(224, 134, 47, 0.16), transparent 70%),
+        radial-gradient(ellipse 120% 60% at 50% 100%, var(--night-deep), var(--night) 60%);
+    color: var(--cream);
+    font-family: "Alexandria", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    padding: 8vh 20px 6vh;
+}
+
+.scene {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- Hero: the hut's glowing roof ---- */
+
+.hut {
+    width: 100%;
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0% 100%, 0% 38%);
+    background:
+        radial-gradient(ellipse 90% 70% at 50% 100%, var(--ember) 0%, var(--ember-deep) 45%, var(--oak-dark) 78%);
+    padding: 15% 12% 9%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    animation: flicker 6s ease-in-out infinite;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.5rem, 4.6vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--night-deep);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+h1 .fa-pizza-slice {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.4em;
+}
+
+@keyframes flicker {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hut { animation: none; }
+}
+
+/* ---- Body: sits inside the "hut" ---- */
+
+main {
+    width: 88%;
+    margin-top: -1px;
+    background: linear-gradient(180deg, var(--oak-dark), var(--night) 55%);
+    border-inline: 1px solid rgba(224, 134, 47, 0.25);
+    border-bottom: 1px solid rgba(224, 134, 47, 0.25);
+    border-radius: 0 0 18px 18px;
+    padding: 34px 26px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav li {
+    flex: 1;
+    max-width: 150px;
+}
+
+.nav-btn {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--cream);
+    background: var(--oak);
+    border: 1px solid rgba(243, 230, 211, 0.15);
+    border-radius: 14px 14px 6px 6px;
+    padding: 20px 10px 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn i {
+    font-size: 1.8rem;
+    color: var(--ember);
+}
+
+.nav-btn:hover,
+.nav-btn:focus-visible {
+    background: var(--oak-dark);
+    transform: translateY(-2px);
+}
+
+.nav-btn:focus-visible {
+    outline: 2px solid var(--ember);
+    outline-offset: 3px;
+}
+
+p {
+    margin: 0;
+    max-width: 42ch;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--cream-dim);
+}
+
+footer {
+    margin-top: 26px;
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+    opacity: 0.7;
+    text-align: center;
+}
+
+@media (max-width: 420px) {
+    .hut { padding: 20% 8% 8%; }
+    main { width: 94%; padding: 28px 18px 32px; }
+    nav ul { gap: 10px; }
+}
