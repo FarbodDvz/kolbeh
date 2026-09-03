@@ -77,6 +77,13 @@
     gap: 16px;
     padding: 14px 0;
     border-bottom: 1px solid rgba(243, 230, 211, 0.08);
+    transition: ease 0.2s;
+}
+.item:hover {
+    transform: scale(1.05);
+    .item-desc{
+        font-weight:600;
+    }
 }
 
 .item:last-child {
@@ -99,6 +106,7 @@
     font-size: 0.85rem;
     color: var(--cream-dim);
     line-height: 1.6;
+    transition: ease 0.2s;
 }
 
 .item-price {
